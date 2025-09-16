@@ -1,4 +1,4 @@
-# RNA-Seq Analysis Pipeline and Shiny App
+# RNA-Seq Analysis Pipeline
 
 ## Overview
 
