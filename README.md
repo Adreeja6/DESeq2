@@ -78,13 +78,13 @@ tail -n +2 MDS.txt | cut -f8 | tr ';' '\n' | sed '/^$/d' | xargs -n1 -I {} wget 
 ### 5. Update Pipeline Script Paths
 Update `pipeline.sh` to use the correct paths for the reference genome, GTF, and directories:
 ```bash
-sed -i 's|ref="/home/pls_trainee/adreeja/ref/hg38"|ref="$(pwd)/ref/GRCh38.primary_assembly.genome.fa"|' pipeline.sh
+sed -i 's|ref="/home/pls_trainee/adreeja/ref/hg38"|ref="$(pwd)/ref/GRCh38.primary_assembly.genome.fa"|' script.sh
 ```
 ```bash
-sed -i 's|gtf="/home/pls_trainee/adreeja/gtf/gencode.v44.annotation.gtf"|gtf="$(pwd)/gtf/gencode.v44.annotation.gtf"|' pipeline.sh
+sed -i 's|gtf="/home/pls_trainee/adreeja/gtf/gencode.v44.annotation.gtf"|gtf="$(pwd)/gtf/gencode.v44.annotation.gtf"|' script.sh
 ```
 ```bash
-sed -i 's|/home/pls_trainee/adreeja/RNA/|$(pwd)/|' pipeline.sh
+sed -i 's|/home/pls_trainee/adreeja/RNA/|$(pwd)/|' script.sh
 ```
 
 ### 6. Make Your Script Executable
