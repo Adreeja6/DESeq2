@@ -6,7 +6,7 @@ This repository provides a complete RNA-Seq analysis workflow, combining a Bash 
 
 ## Repository Structure
 
-- `pipeline.sh`: Bash script for the RNA-Seq pipeline, handling preprocessing, alignment, and gene quantification.
+- `script.sh`: Bash script for the RNA-Seq pipeline, handling preprocessing, alignment, and gene quantification.
 - `app.R`: R Shiny application for differential expression analysis and visualization using DESeq2.
 - `MDS.txt`: Metadata file with URLs for downloading FASTQ files.
 - `README.md`: This file, providing setup and usage instructions.
@@ -76,7 +76,7 @@ tail -n +2 MDS.txt | cut -f8 | tr ';' '\n' | sed '/^$/d' | xargs -n1 -I {} wget 
 ```
 
 ### 5. Update Pipeline Script Paths
-Update `pipeline.sh` to use the correct paths for the reference genome, GTF, and directories:
+Update `script.sh` to use the correct paths for the reference genome, GTF, and directories:
 ```bash
 sed -i 's|ref="/home/pls_trainee/adreeja/ref/hg38"|ref="$(pwd)/ref/GRCh38.primary_assembly.genome.fa"|' script.sh
 ```
